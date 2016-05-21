@@ -1,0 +1,18 @@
+C:\Users\User\Downloads\Task06\UserBase.FileDAL\bin\Debug\UserBase.FileDAL.dll
+C:\Users\User\Downloads\Task06\UserBase.FileDAL\bin\Debug\UserBase.FileDAL.pdb
+C:\Users\User\Downloads\Task06\UserBase.FileDAL\bin\Debug\UserBase.DALContracts.dll
+C:\Users\User\Downloads\Task06\UserBase.FileDAL\bin\Debug\UserBase.Entities.dll
+C:\Users\User\Downloads\Task06\UserBase.FileDAL\bin\Debug\UserBase.DALContracts.pdb
+C:\Users\User\Downloads\Task06\UserBase.FileDAL\bin\Debug\UserBase.Entities.pdb
+C:\Users\User\Downloads\Task06\UserBase.FileDAL\obj\Debug\UserBase.FileDAL.csprojResolveAssemblyReference.cache
+C:\Users\User\Downloads\Task06\UserBase.FileDAL\obj\Debug\UserBase.FileDAL.dll
+C:\Users\User\Downloads\Task06\UserBase.FileDAL\obj\Debug\UserBase.FileDAL.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.FileDAL\bin\Debug\UserBase.FileDAL.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.FileDAL\bin\Debug\UserBase.FileDAL.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.FileDAL\bin\Debug\UserBase.DALContracts.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.FileDAL\bin\Debug\UserBase.Entities.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.FileDAL\bin\Debug\UserBase.DALContracts.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.FileDAL\bin\Debug\UserBase.Entities.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.FileDAL\obj\Debug\UserBase.FileDAL.csprojResolveAssemblyReference.cache
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.FileDAL\obj\Debug\UserBase.FileDAL.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.FileDAL\obj\Debug\UserBase.FileDAL.pdb

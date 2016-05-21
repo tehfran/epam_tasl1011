@@ -1,0 +1,47 @@
+﻿@using UserBase.Entities;
+@using UserBase.WebUI.Models;
+
+@{
+    var stringId = Request["id"];
+    int id;
+    var source = Request["source"];
+    var imageLogic = ImageLinker.Instance;
+    var userLogic = UserLinker.Instance;
+    var awardLogic = AwardLinker.Instance;
+
+    if (string.IsNullOrWhiteSpace(stringId) || !int.TryParse(stringId, out id))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    int? imageId = null;
+
+    switch (source)
+    {
+        case "user":
+            imageId = userLogic.Get(id).Image;
+
+            break;
+
+        case "award":
+            imageId = awardLogic.Get(id).Image;
+            break;
+
+        default:
+            Response.SetStatus(HttpStatusCode.BadRequest);
+            return;
+    }
+
+    if (imageId == null)
+    {
+        Response.WriteFile($"~/Images/default-{source}.png");
+    }
+    else
+    {
+        var image = imageLogic.Get(imageId.Value);
+        Response.WriteBinary(image.Content, image.ContentType);
+    }
+
+    //Response.AddHeader("Content-Disposition", $"inline; filename=\"{image.FileName}\"");
+}

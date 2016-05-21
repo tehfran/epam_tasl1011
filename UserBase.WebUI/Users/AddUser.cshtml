@@ -1,0 +1,67 @@
+﻿@using UserBase.WebUI.Models;
+
+@if (IsPost)
+{
+    var userName = Request["userName"];
+    if (string.IsNullOrWhiteSpace(userName))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    var userDateString = Request["userDate"];
+
+    DateTime userDate = DateTime.Parse(userDateString);
+
+    @*if (!DateTime.TryParseExact(userDateString, out userDate, I ))
+    {
+        //response.SetStatus(HttpStatusCode.BadRequest);
+        <span>@userDateString</span>
+        <span>@userDate</span>
+        return;
+    }*@
+
+    var id = UserLinker.Instance.Add(userName, userDate);
+
+    if (IsAjax)
+    {
+        var newUser = UserLinker.Instance.Get(id);
+        <tr>
+            <td>@newUser.Id</td>
+            <td>@newUser.Username</td>
+            <td>@newUser.Age</td>
+            <td>@newUser.BirthDate</td>  
+            <td>
+                <form action="~/Remove" method="post">
+                    <input type="hidden" name="id" value="@newUser.Id" />
+                    <button type="submit" class="btn btn-danger btn-sm">
+                        <i class="glyphicon glyphicon-remove"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+    else
+    {
+        Response.Redirect("../Index");
+    }
+    return;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    @RenderPage("~/_Header.cshtml")
+    <form action="~/Users/AddUser" method="post" role="form">
+        <div class="form-group">
+            <label class="control-label" for="userText">New user:</label>
+            <input type="text" class="form-control new-user-text" name="userName" placeholder="Enter user name">
+            <input type="date" class="form-control new-user-date" name="userDate" placeholder="Enter birth date">
+        </div>
+        <button class="btn btn-default add-user">Add user</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+C:\Users\User\Downloads\Task06\UserBase.BLContracts\bin\Debug\UserBase.BLContracts.dll
+C:\Users\User\Downloads\Task06\UserBase.BLContracts\bin\Debug\UserBase.BLContracts.pdb
+C:\Users\User\Downloads\Task06\UserBase.BLContracts\bin\Debug\UserBase.Entities.dll
+C:\Users\User\Downloads\Task06\UserBase.BLContracts\bin\Debug\UserBase.Entities.pdb
+C:\Users\User\Downloads\Task06\UserBase.BLContracts\obj\Debug\UserBase.BLContracts.dll
+C:\Users\User\Downloads\Task06\UserBase.BLContracts\obj\Debug\UserBase.BLContracts.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.BLContracts\obj\Debug\UserBase.BLContracts.csprojResolveAssemblyReference.cache
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.BLContracts\obj\Debug\UserBase.BLContracts.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.BLContracts\obj\Debug\UserBase.BLContracts.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.BLContracts\bin\Debug\UserBase.BLContracts.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.BLContracts\bin\Debug\UserBase.BLContracts.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.BLContracts\bin\Debug\UserBase.Entities.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.BLContracts\bin\Debug\UserBase.Entities.pdb

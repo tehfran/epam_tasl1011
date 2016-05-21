@@ -1,0 +1,40 @@
+@using UserBase.WebUI.Models;
+
+@if (IsPost)
+{
+    var stringUserId = Request["userId"];
+    int userId;
+    if (string.IsNullOrWhiteSpace(stringUserId) || !int.TryParse(stringUserId, out userId))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+    
+    var stringAwardId = Request["awardId"];
+    int awardId;
+    if (string.IsNullOrWhiteSpace(stringAwardId) || !int.TryParse(stringAwardId, out awardId))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    //UserBase.Entities.User user = null;
+
+    try
+    {
+        AwardLinker.Instance.Rescind(userId, awardId);
+    }
+
+    catch (ArgumentOutOfRangeException)
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    Response.Redirect("../Index");
+    return;
+}
+else
+{
+    Response.SetStatus(HttpStatusCode.NotFound);
+}

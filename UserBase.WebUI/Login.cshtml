@@ -1,0 +1,58 @@
+﻿@using UserBase.WebUI.Models;
+
+@{ bool failed = false; }
+@if (IsPost)
+{
+    string login = Request["login"];
+    string password = Request["password"];
+
+    if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    if (LoginLinker.Instance.CanLogin(login, password))
+    {
+        FormsAuthentication.SetAuthCookie(login, createPersistentCookie: false);
+
+        var returnUrl = Request["ReturnUrl"];
+        if (string.IsNullOrWhiteSpace(returnUrl))
+        {
+            returnUrl = "~";
+        }
+        Response.Redirect(returnUrl);
+        return;
+    }
+
+    failed = true;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    @if (failed)
+    {
+        <div class="alert alert-danger">
+            Authentication failed
+        </div>
+    }
+    <form action="~/Login" method="post" role="form">
+        <div class="form-group">
+            <label class="control-label" for="login">Login</label>
+            <input type="text" class="form-control" id="login" name="login" placeholder="Enter login">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+        </div>
+        <input type="hidden" name="ReturnUrl" value="@Request["ReturnUrl"]" />
+        <button type="submit" class="btn btn-default">Login</button>
+        <span>default auth is admin:password</span>
+    </form>
+    
+</body>
+</html>

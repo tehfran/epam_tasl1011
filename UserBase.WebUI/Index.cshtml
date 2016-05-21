@@ -1,0 +1,103 @@
+﻿@using UserBase.BLContracts;
+@using UserBase.UserLogic;
+@using UserBase.Entities;
+@using UserBase.WebUI.Models;
+@{
+    IUserLogic userLogic = UserLinker.Instance;
+    IAwardLogic awardLogic = AwardLinker.Instance;
+    IEnumerable<User> users = userLogic.GetAll();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    @RenderPage("~/_Header.cshtml")
+    <div class="new-user">
+        <div class="form-group">
+            <label class="control-label" for="userText">New user:</label>
+            <input type="text" class="form-control new-user-text" name="userName" placeholder="Enter user name">
+            <input type="text" class="form-control new-user-date" name="userDate" placeholder="Enter birth date">
+        </div>
+        <button class="btn btn-default add-user">Add user</button>
+        
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Age</th>
+                <th>Birth date</th>
+                <th>Image</th>
+                @if (User.IsInRole("admin"))
+                {
+                    <th>Awards</th>
+                    <th>Control</th>
+                }
+
+            </tr>
+        </thead>
+        <tbody class="users-list">
+            @foreach (var user in users.OrderBy(x => x.Username))
+            {
+                <tr>
+                    <td>@user.Username</td>
+                    <td>@user.Age</td>
+                    <td>@user.BirthDate.ToShortDateString()</td>
+                    <td><img src="~/Images/View?id=@user.Id&source=user" width="100" height="100" class="img-responsive img-rounded img-thumbnail" /></td>
+                    @if (User.IsInRole("user") || User.IsInRole("admin"))
+                    {
+                        <td>
+                            <ul class="award-list">
+                                @foreach (var award in user.Awards)
+                                {
+                                    <li>
+                                        @awardLogic.Get(award).Name
+                                        <form action="~/Users/RescindAward" method="post">
+                                            <input type="hidden" name="userId" value="@user.Id" />
+                                            <input type="hidden" name="awardId" value="@award" />
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                <i class="glyphicon glyphicon-minus-sign"></i>
+                                            </button>
+                                        </form>
+                                    </li>
+                                }
+                            </ul>
+                            @if (User.IsInRole("admin"))
+                            {
+                                <form action="~/Users/GrantAward">
+                                    <input type="hidden" name="userId" value="@user.Id" />
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="glyphicon glyphicon-plus-sign"></i>
+                                    </button>
+                                </form>
+                            }
+                        </td>
+                        if (User.IsInRole("admin"))
+                        {
+                            <td>
+                                <form action="~/Users/RemoveUser" method="post">
+                                    <input type="hidden" name="id" value="@user.Id" />
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="glyphicon glyphicon-remove"></i>
+                                    </button>
+                                </form>
+                                <form action="~/Users/EditUser?id=@user.Id" method="get">
+                                    <input type="hidden" name="id" value="@user.Id" />
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="glyphicon glyphicon-edit"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        }
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <script src="~/Scripts/index.js"></script>
+</body>
+</html>

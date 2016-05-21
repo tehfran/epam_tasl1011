@@ -1,0 +1,18 @@
+C:\Users\User\Downloads\Task06\UserBase.MemoryDAL\bin\Debug\UserBase.MemoryDAL.dll
+C:\Users\User\Downloads\Task06\UserBase.MemoryDAL\bin\Debug\UserBase.MemoryDAL.pdb
+C:\Users\User\Downloads\Task06\UserBase.MemoryDAL\bin\Debug\UserBase.DALContracts.dll
+C:\Users\User\Downloads\Task06\UserBase.MemoryDAL\bin\Debug\UserBase.Entities.dll
+C:\Users\User\Downloads\Task06\UserBase.MemoryDAL\bin\Debug\UserBase.DALContracts.pdb
+C:\Users\User\Downloads\Task06\UserBase.MemoryDAL\bin\Debug\UserBase.Entities.pdb
+C:\Users\User\Downloads\Task06\UserBase.MemoryDAL\obj\Debug\UserBase.MemoryDAL.csprojResolveAssemblyReference.cache
+C:\Users\User\Downloads\Task06\UserBase.MemoryDAL\obj\Debug\UserBase.MemoryDAL.dll
+C:\Users\User\Downloads\Task06\UserBase.MemoryDAL\obj\Debug\UserBase.MemoryDAL.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.MemoryDAL\obj\Debug\UserBase.MemoryDAL.csprojResolveAssemblyReference.cache
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.MemoryDAL\obj\Debug\UserBase.MemoryDAL.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.MemoryDAL\obj\Debug\UserBase.MemoryDAL.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.MemoryDAL\bin\Debug\UserBase.MemoryDAL.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.MemoryDAL\bin\Debug\UserBase.MemoryDAL.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.MemoryDAL\bin\Debug\UserBase.DALContracts.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.MemoryDAL\bin\Debug\UserBase.Entities.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.MemoryDAL\bin\Debug\UserBase.DALContracts.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.MemoryDAL\bin\Debug\UserBase.Entities.pdb

@@ -1,0 +1,130 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserBase.ConsoleUI", "UserBase.ConsoleUI\UserBase.ConsoleUI.csproj", "{3B0C57CB-2C1D-4BED-B6EA-450F4C4C9208}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserBase.UserLogic", "UserBase.UserLogic\UserBase.UserLogic.csproj", "{A232415C-890F-4B87-B808-7FCA8960D25F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserBase.DALContracts", "UserBase.DALContracts\UserBase.DALContracts.csproj", "{685CB30A-40A8-4C74-9DF0-986CE67DB780}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserBase.FileDAL", "UserBase.FileDAL\UserBase.FileDAL.csproj", "{96260397-2D4D-44E3-8869-F546619D984C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserBase.MemoryDAL", "UserBase.MemoryDAL\UserBase.MemoryDAL.csproj", "{A1FAECA7-7630-4EAC-B0B5-630E5E88D26E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserBase.Entities", "UserBase.Entities\UserBase.Entities.csproj", "{93D81850-1AD7-40A6-83C7-3C910A9AC196}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserBase.BLContracts", "UserBase.BLContracts\UserBase.BLContracts.csproj", "{1EFA8344-8C69-4B32-AE9C-FEB89EEFC265}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PL", "PL", "{6B4C7D9B-B443-448C-81BC-F3F64D684F8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{2156675F-82C1-447F-8D74-B711FB798E72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{C2A066EB-3334-44C9-9444-EDF4227C33A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserBase.WebUI", "UserBase.WebUI\UserBase.WebUI.csproj", "{EAFA4E37-B1E1-4922-932E-E27CDC67B1F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserBase.DbDAL", "DbDAL\UserBase.DbDAL.csproj", "{14631220-54AD-4523-AAF5-6E9C961AF7A1}"
+EndProject
+Global
+	GlobalSection(JSLint) = preSolution
+		SolutionConfigurationLocation = JSLintOptions.xml
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B0C57CB-2C1D-4BED-B6EA-450F4C4C9208}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B0C57CB-2C1D-4BED-B6EA-450F4C4C9208}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B0C57CB-2C1D-4BED-B6EA-450F4C4C9208}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B0C57CB-2C1D-4BED-B6EA-450F4C4C9208}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A232415C-890F-4B87-B808-7FCA8960D25F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A232415C-890F-4B87-B808-7FCA8960D25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A232415C-890F-4B87-B808-7FCA8960D25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A232415C-890F-4B87-B808-7FCA8960D25F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685CB30A-40A8-4C74-9DF0-986CE67DB780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685CB30A-40A8-4C74-9DF0-986CE67DB780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685CB30A-40A8-4C74-9DF0-986CE67DB780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685CB30A-40A8-4C74-9DF0-986CE67DB780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96260397-2D4D-44E3-8869-F546619D984C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96260397-2D4D-44E3-8869-F546619D984C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96260397-2D4D-44E3-8869-F546619D984C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96260397-2D4D-44E3-8869-F546619D984C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1FAECA7-7630-4EAC-B0B5-630E5E88D26E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FAECA7-7630-4EAC-B0B5-630E5E88D26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FAECA7-7630-4EAC-B0B5-630E5E88D26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FAECA7-7630-4EAC-B0B5-630E5E88D26E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D81850-1AD7-40A6-83C7-3C910A9AC196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D81850-1AD7-40A6-83C7-3C910A9AC196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D81850-1AD7-40A6-83C7-3C910A9AC196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D81850-1AD7-40A6-83C7-3C910A9AC196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EFA8344-8C69-4B32-AE9C-FEB89EEFC265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EFA8344-8C69-4B32-AE9C-FEB89EEFC265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EFA8344-8C69-4B32-AE9C-FEB89EEFC265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EFA8344-8C69-4B32-AE9C-FEB89EEFC265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAFA4E37-B1E1-4922-932E-E27CDC67B1F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAFA4E37-B1E1-4922-932E-E27CDC67B1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAFA4E37-B1E1-4922-932E-E27CDC67B1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAFA4E37-B1E1-4922-932E-E27CDC67B1F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14631220-54AD-4523-AAF5-6E9C961AF7A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14631220-54AD-4523-AAF5-6E9C961AF7A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14631220-54AD-4523-AAF5-6E9C961AF7A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14631220-54AD-4523-AAF5-6E9C961AF7A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3B0C57CB-2C1D-4BED-B6EA-450F4C4C9208} = {6B4C7D9B-B443-448C-81BC-F3F64D684F8F}
+		{A232415C-890F-4B87-B808-7FCA8960D25F} = {2156675F-82C1-447F-8D74-B711FB798E72}
+		{685CB30A-40A8-4C74-9DF0-986CE67DB780} = {C2A066EB-3334-44C9-9444-EDF4227C33A8}
+		{96260397-2D4D-44E3-8869-F546619D984C} = {C2A066EB-3334-44C9-9444-EDF4227C33A8}
+		{A1FAECA7-7630-4EAC-B0B5-630E5E88D26E} = {C2A066EB-3334-44C9-9444-EDF4227C33A8}
+		{1EFA8344-8C69-4B32-AE9C-FEB89EEFC265} = {2156675F-82C1-447F-8D74-B711FB798E72}
+		{EAFA4E37-B1E1-4922-932E-E27CDC67B1F8} = {6B4C7D9B-B443-448C-81BC-F3F64D684F8F}
+		{14631220-54AD-4523-AAF5-6E9C961AF7A1} = {C2A066EB-3334-44C9-9444-EDF4227C33A8}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://beansidhe.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = UserBase.ConsoleUI\\UserBase.ConsoleUI.csproj
+		SccProjectTopLevelParentUniqueName1 = Task06.sln
+		SccProjectName1 = UserBase.ConsoleUI
+		SccLocalPath1 = UserBase.ConsoleUI
+		SccProjectUniqueName2 = UserBase.UserLogic\\UserBase.UserLogic.csproj
+		SccProjectTopLevelParentUniqueName2 = Task06.sln
+		SccProjectName2 = UserBase.UserLogic
+		SccLocalPath2 = UserBase.UserLogic
+		SccProjectUniqueName3 = UserBase.DALContracts\\UserBase.DALContracts.csproj
+		SccProjectTopLevelParentUniqueName3 = Task06.sln
+		SccProjectName3 = UserBase.DALContracts
+		SccLocalPath3 = UserBase.DALContracts
+		SccProjectUniqueName4 = UserBase.FileDAL\\UserBase.FileDAL.csproj
+		SccProjectTopLevelParentUniqueName4 = Task06.sln
+		SccProjectName4 = UserBase.FileDAL
+		SccLocalPath4 = UserBase.FileDAL
+		SccProjectUniqueName5 = UserBase.MemoryDAL\\UserBase.MemoryDAL.csproj
+		SccProjectTopLevelParentUniqueName5 = Task06.sln
+		SccProjectName5 = UserBase.MemoryDAL
+		SccLocalPath5 = UserBase.MemoryDAL
+		SccProjectUniqueName6 = UserBase.Entities\\UserBase.Entities.csproj
+		SccProjectName6 = UserBase.Entities
+		SccLocalPath6 = UserBase.Entities
+		SccProjectUniqueName7 = UserBase.BLContracts\\UserBase.BLContracts.csproj
+		SccProjectTopLevelParentUniqueName7 = Task06.sln
+		SccProjectName7 = UserBase.BLContracts
+		SccLocalPath7 = UserBase.BLContracts
+		SccProjectUniqueName8 = UserBase.WebUI\\UserBase.WebUI.csproj
+		SccProjectTopLevelParentUniqueName8 = Task06.sln
+		SccProjectName8 = UserBase.WebUI
+		SccLocalPath8 = UserBase.WebUI
+		SccProjectUniqueName9 = DbDAL\\UserBase.DbDAL.csproj
+		SccProjectTopLevelParentUniqueName9 = Task06.sln
+		SccProjectName9 = DbDAL
+		SccLocalPath9 = DbDAL
+	EndGlobalSection
+EndGlobal

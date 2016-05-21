@@ -1,0 +1,62 @@
+﻿@using UserBase.WebUI.Models;
+@if (IsPost)
+{
+    var stId = Request["id"];
+    int sid;
+    if (string.IsNullOrWhiteSpace(stId) || !int.TryParse(stId, out sid))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    UserBase.Entities.Award award = null;
+
+    try
+    {
+        award = AwardLinker.Instance.Get(sid);
+    }
+
+    catch (ArgumentOutOfRangeException)
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+
+    UserLinker.Instance.Delete(sid);
+    Response.Redirect("~/Index");
+    return;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <form action="~/Awards/RemoveAward" method="post" role="form">
+        <div class="form-group">
+        @{
+            var stringId = Request["id"];
+            int id;
+            if (string.IsNullOrWhiteSpace(stringId) || !int.TryParse(stringId, out id))
+            {
+                Response.SetStatus(HttpStatusCode.BadRequest);
+                return;
+            }
+        }
+        <p>Do you really want to remove @AwardLinker.Instance.Get(id).Name?</p>
+        <p>The following users will have it automatically rescinded:</p>
+            <ul>
+                @foreach(var user in AwardLinker.Instance.Users(id))
+                {
+                    <li>@user.Username</li>
+                }
+            </ul>            
+        </div>
+        <button class="btn btn-default">OK</button>
+        <a class="btn btn-default" href="/Index">Cancel</a>
+    </form>
+</body>
+</html>

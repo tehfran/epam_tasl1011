@@ -1,0 +1,71 @@
+﻿@using UserBase.WebUI.Models;
+@if (IsPost)
+{
+    var stringId = Request["id"];
+    int userId;
+    if (string.IsNullOrWhiteSpace(stringId) || !int.TryParse(stringId, out userId))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    var userName = Request["userName"];
+    if (string.IsNullOrWhiteSpace(userName))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    var userDateString = Request["userDate"];
+
+    DateTime userDate;
+
+    if (!DateTime.TryParse(userDateString, out userDate))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    var oldUser = UserLinker.Instance.Get(userId);
+
+    var newUser = new UserBase.Entities.User(userId, userName, userDate, oldUser.Awards, oldUser.Image);
+
+    UserLinker.Instance.Edit(newUser);
+
+    return;
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <form action="~/Users/AddUser" method="post" role="form">
+        <div class="form-group">
+            <label class="control-label" for="userText">Edit user:</label>
+            @{
+                var stringid = Request["id"];
+                var id = int.Parse(stringid);
+                <input type="hidden" name="id" value="@id" />
+                var user = UserLinker.Instance.Get(id);
+            }
+            <input type="text" class="form-control new-user-text" name="userName" value="@user.Username">
+            <input type="date" class="form-control new-user-date" min="1900-01-01" max="2000-12-31" name="userDate" value="@user.BirthDate.ToString("yyyy-MM-dd")">
+        </div>
+        <button class="btn btn-default edit-user">Edit user</button>
+    </form>
+
+    <form action="~/Images/Upload" method="post" enctype="multipart/form-data" role="form">
+        <div class="form-group">
+            <label for="uploaded" class="control-label">Choose file for upload</label>
+            <input type="file" class="form-control" id="uploaded" name="uploaded" />
+            <input type="hidden" id="id" />
+            <input type="hidden" name="source" value="user" />
+            <input type="hidden" name="id" value="@user.Id" />
+        </div>
+        <button type="submit" class="btn btn-default glyphicon glyphicon-upload">Upload image</button>
+    </form>
+</body>
+</html>

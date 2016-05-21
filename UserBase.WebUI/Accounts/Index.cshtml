@@ -1,0 +1,52 @@
+﻿@using UserBase.BLContracts;
+@using UserBase.UserLogic;
+@using UserBase.Entities;
+@using UserBase.WebUI.Models;
+@{
+    ILoginLogic loginLogic = LoginLinker.Instance;
+    IEnumerable<Account> accounts = loginLogic.GetAll();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    @RenderPage("~/_Header.cshtml")
+    @{
+        if (!User.IsInRole("admin"))
+        {
+            Response.SetStatus(HttpStatusCode.Forbidden);
+        }
+    }
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Login</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody class="user-list">
+            @foreach (var account in accounts)
+            {
+                <tr>
+                    <td>@account.Login</td>
+                    <td>
+                        @account.Role
+                        <form action="~/Accounts/EditRole" method="post">
+                            <input type="hidden" name="login" value="@account.Login" />
+                            <button type="submit" class="btn btn-sm">
+                                <i class="glyphicon glyphicon-edit"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <script src="~/Scripts/index.js"></script>
+</body>
+</html>

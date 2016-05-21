@@ -1,0 +1,47 @@
+﻿@using UserBase.WebUI.Models;
+@using UserBase.BLContracts;
+@using UserBase.UserLogic;
+@using UserBase.Entities;
+@{
+    var loginLogic = LoginLinker.Instance;
+}
+
+@if (IsPost)
+{
+    var stringLogin = Request["login"];
+
+    var rolename = Request["rolename"];
+
+    if (string.IsNullOrWhiteSpace(stringLogin))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    loginLogic.ChangeRole(stringLogin, rolename);
+    Response.Redirect("~/Accounts/Index");
+    return;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    @RenderPage("~/_Header.cshtml")
+    <form action="~/Accounts/EditRole" method="post" role="form">
+        <div class="form-group">
+            <label class="control-label" for="userText">Select award</label>
+            <select name="rolename">
+                @foreach (var role in loginLogic.GetAllRoles())
+                {
+                    <option value="@role">@role</option>
+                }
+            </select>
+            <input type="hidden" name="login" value="@Request["login"]" />
+        </div>
+        <button class="btn btn-default grant-award">Change role</button>
+    </form>
+</body>
+</html>

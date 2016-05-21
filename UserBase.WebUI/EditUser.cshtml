@@ -1,0 +1,56 @@
+﻿@using UserBase.WebUI.Models;
+@if (IsPost)
+    {
+        var stringId = Request["id"];
+        int id;
+        if (string.IsNullOrWhiteSpace(stringId) || !int.TryParse(stringId, out id))
+        {
+            Response.SetStatus(HttpStatusCode.BadRequest);
+            return;
+        }
+
+        var userName = Request["userName"];
+        if (string.IsNullOrWhiteSpace(userName))
+        {
+            Response.SetStatus(HttpStatusCode.BadRequest);
+            return;
+        }
+
+        var userDateString = Request["userDate"];
+
+        DateTime userDate = new DateTime();
+
+        if (!DateTime.TryParse(userDateString, out userDate))
+        {
+            Response.SetStatus(HttpStatusCode.BadRequest);
+            return;
+        }
+
+        var user = new UserBase.Entities.User(id, userName, userDate);
+
+        UserLinker.Instance.Edit(user);
+
+        return;
+    }
+    else
+    {
+        Response.Redirect("~/Index");
+    }
+    return;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <form action="~/Add" method="post" role="form">
+        <div class="form-group">
+            <label class="control-label" for="noteText">New note text:</label>
+            <input type="text" class="form-control" id="noteText" name="noteText" placeholder="Enter note text">
+        </div>
+        <button type="submit" class="btn btn-default">Add note</button>
+    </form>
+</body>
+</html>

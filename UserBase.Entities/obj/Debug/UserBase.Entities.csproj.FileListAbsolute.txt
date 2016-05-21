@@ -1,0 +1,10 @@
+C:\Users\User\Downloads\Task06\UserBase.Entities\bin\Debug\UserBase.Entities.dll
+C:\Users\User\Downloads\Task06\UserBase.Entities\bin\Debug\UserBase.Entities.pdb
+C:\Users\User\Downloads\Task06\UserBase.Entities\obj\Debug\UserBase.Entities.csprojResolveAssemblyReference.cache
+C:\Users\User\Downloads\Task06\UserBase.Entities\obj\Debug\UserBase.Entities.dll
+C:\Users\User\Downloads\Task06\UserBase.Entities\obj\Debug\UserBase.Entities.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.Entities\bin\Debug\UserBase.Entities.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.Entities\bin\Debug\UserBase.Entities.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.Entities\obj\Debug\UserBase.Entities.csprojResolveAssemblyReference.cache
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.Entities\obj\Debug\UserBase.Entities.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.Entities\obj\Debug\UserBase.Entities.pdb

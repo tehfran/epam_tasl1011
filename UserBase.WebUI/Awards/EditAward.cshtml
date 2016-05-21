@@ -1,0 +1,56 @@
+﻿@using UserBase.WebUI.Models;
+@if (IsPost)
+{
+    var stringId = Request["id"];
+    int awardId;
+    if (string.IsNullOrWhiteSpace(stringId) || !int.TryParse(stringId, out awardId))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    var awardName = Request["awardName"];
+    if (string.IsNullOrWhiteSpace(awardName))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    var award = new UserBase.Entities.Award(awardId, awardName);
+
+    AwardLinker.Instance.Edit(award);
+
+    return;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    @RenderPage("~/_Header.cshtml")
+    <form action="~/Awards/EditAward" method="post" role="form">
+        <div class="form-group">
+            <label class="control-label" for="awardText">Edit award:</label>
+            @{
+                var id = int.Parse(Request["id"]);
+                <input type="hidden" name="id" value="@id" />
+            }
+            <input type="text" class="form-control new-award-text" name="awardName" placeholder="Enter award name">
+        </div>
+        <button class="btn btn-default edit-user">Rename award</button>
+    </form>
+
+    <form action="~/Images/Upload" method="post" enctype="multipart/form-data" role="form">
+        <div class="form-group">
+            <label for="uploaded" class="control-label">Choose file for upload</label>
+            <input type="file" class="form-control" id="uploaded" name="uploaded" />
+            <input type="hidden" id="id" />
+            <input type="hidden" name="source" value="award" />
+            <input type="hidden" name="id" value="@id" />
+        </div>
+        <button type="submit" class="btn btn-default glyphicon glyphicon-upload">Upload image</button>
+    </form>
+</body>
+</html>

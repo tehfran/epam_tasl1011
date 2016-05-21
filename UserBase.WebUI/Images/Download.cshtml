@@ -1,0 +1,20 @@
+﻿@{
+    var stringId = Request["id"];
+    int id;
+    if (string.IsNullOrWhiteSpace(stringId) || !int.TryParse(stringId, out id))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    var image = UserBase.WebUI.Models.ImageLinker.Instance.Get(id);
+    if (image == null)
+    {
+        Response.SetStatus(HttpStatusCode.NotFound);
+        return;
+    }
+
+    // Тип application/octet-stream говорит браузеру, что это файл неизвестного типа и его надо просто сохранить.
+    Response.WriteBinary(image.Content, "application/octet-stream");
+    Response.AddHeader("Content-Disposition", $"inline; filename=\"{image.FileName}\"");
+}

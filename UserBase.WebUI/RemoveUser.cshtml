@@ -1,0 +1,32 @@
+﻿@using UserBase.WebUI.Models;
+
+@if (IsPost)
+{
+    var stringId = Request["id"];
+    int id;
+    if (string.IsNullOrWhiteSpace(stringId) || !int.TryParse(stringId, out id))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    UserBase.Entities.User user = null;
+
+    try
+    {
+        user = UserLinker.Instance.Get(id);
+    }
+
+    catch (ArgumentOutOfRangeException)
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+    UserLinker.Instance.Delete(id);
+    Response.Redirect("~/Index");
+    return;
+}
+else
+{
+    Response.SetStatus(HttpStatusCode.NotFound);
+}

@@ -1,0 +1,38 @@
+﻿<nav class="btn-group-justified well">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a href="~/Logout" class="btn">
+            <i class="glyphicon glyphicon-log-out"></i>
+            @User.Identity.Name
+        </a>
+    }
+    else
+    {
+        <a href="~/Login" class="btn"><i class="glyphicon glyphicon-log-out"></i>Login</a>
+        <a href="~/Register" class="btn"><i class="glyphicon glyphicon-question-sign"></i>Register</a>
+    }
+
+    <a href="~/AddUser" class="btn">
+        <i class="glyphicon glyphicon-plus"></i>
+        Add user
+    </a>
+
+    <a href="~/Index" class="btn">
+        <i class="glyphicon glyphicon-user"></i>
+        Users
+    </a>
+
+    @if (User.IsInRole("admin"))
+    {
+        <a href="~/Awards/Index" class="btn">
+            <i class="glyphicon glyphicon-heart"></i>
+            Awards
+        </a>
+
+        <a href="~/Accounts/Index" class="btn">
+            <i class="glyphicon glyphicon-lock"></i>
+            Accounts
+        </a>
+    }
+
+</nav>

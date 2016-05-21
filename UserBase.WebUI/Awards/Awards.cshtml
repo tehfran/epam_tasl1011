@@ -1,0 +1,88 @@
+@using UserBase.BLContracts;
+@using UserBase.UserLogic;
+@using UserBase.Entities;
+@using UserBase.WebUI.Models;
+@{
+    IUserLogic userLogic = UserLinker.Instance;
+    IAwardLogic awardLogic = AwardLinker.Instance;
+    IEnumerable<Award> awards = awardLogic.GetAll();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    @if (User.Identity.IsAuthenticated)
+    {
+        @User.Identity.Name
+        <a href="~/Logout">logout</a>
+    }
+    else
+    {
+        <a href="~/Login">login</a>
+    }
+
+    <a href="~/AddAward" class="btn btn-success">
+        <i class="glyphicon glyphicon-plus"></i>
+        Add award
+    </a>
+
+    <a href="../Index" class="btn btn-success">
+        <i class="glyphicon glyphicon-user"></i>
+        Users
+    </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody class="award-list">
+            @foreach (var award in awards)
+            {
+            <tr>
+            <td>@award.Id</td>
+            <td>@award.Name</td>    
+            <td>
+                <ul class="user-list">
+                    @foreach (var user in awardLogic.Users(award.Id))
+                    {
+                        <li>
+                            @user.Username
+                            <form action="~/RescindAward" method="post">
+                                <input type="hidden" name="userId" value="@user.Id" />
+                                <input type="hidden" name="awardId" value="@award.Id" />
+                                <button type="submit" class="btn btn-danger btn-sm">
+                                    <i class="glyphicon glyphicon-minus-sign"></i>
+                                </button>
+                            </form>
+                        </li>
+                    }
+                </ul>
+            </td>
+            <td>
+                <form action="~/RemoveAward" method="post">
+                    <input type="hidden" name="id" value="@award.Id" />
+                    <button type="submit" class="btn btn-danger btn-sm">
+                        <i class="glyphicon glyphicon-remove"></i>
+                    </button>
+                </form>
+                <form action="~/EditAward" method="post">
+                    <input type="hidden" name="id" value="@award.Id" />
+                    <button type="submit" class="btn btn-danger btn-sm">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+            }
+        </tbody>
+    </table>
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <script src="~/Scripts/index.js"></script>
+</body>
+</html>

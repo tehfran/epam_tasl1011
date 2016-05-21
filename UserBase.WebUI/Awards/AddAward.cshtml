@@ -1,0 +1,33 @@
+@using UserBase.WebUI.Models;
+
+@if (IsPost)
+{
+    var awardName = Request["awardName"];
+    if (string.IsNullOrWhiteSpace(awardName))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    var id = AwardLinker.Instance.Add(awardName);
+
+    Response.Redirect("~/Awards/Index");
+    return;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    @RenderPage("~/_Header.cshtml")
+    <form action="~/Awards/AddAward" method="post" role="form">
+        <div class="form-group">
+            <label class="control-label" for="userText">New award:</label>
+            <input type="text" class="form-control new-user-text" name="awardName" placeholder="Enter award name">
+        </div>
+        <button class="btn btn-default add-user">Add user</button>
+    </form>
+</body>
+</html>

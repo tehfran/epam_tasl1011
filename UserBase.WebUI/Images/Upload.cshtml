@@ -1,0 +1,45 @@
+﻿@using UserBase.WebUI.Models;
+@{
+    if (!IsPost)
+    {
+        Response.SetStatus(HttpStatusCode.NotFound);
+        return;
+    }
+
+    var file = Request.Files["uploaded"];
+
+    if (file == null || file.ContentLength == 0)
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    var source = Request["source"];
+
+    if (source != "award" && source != "user")
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    var stringId = Request["id"];
+    int id;
+
+    if (string.IsNullOrWhiteSpace(stringId) || !int.TryParse(stringId, out id))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    byte[] imageContent = new byte[file.ContentLength];
+    file.InputStream.Read(imageContent, 0, imageContent.Length);
+    var image = new UserBase.Entities.Image
+    {
+        Content = imageContent,
+        ContentType = file.ContentType,
+    };
+
+    ImageLinker.Instance.Add(imageContent, file.ContentType, source, id);
+
+    Response.Redirect("~/Index");
+}

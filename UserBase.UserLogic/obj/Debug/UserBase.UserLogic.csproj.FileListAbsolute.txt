@@ -1,0 +1,17 @@
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\UserBase.UserLogic.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\UserBase.UserLogic.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\DbDAL.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\UserBase.BLContracts.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\UserBase.DALContracts.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\UserBase.Entities.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\UserBase.FileDAL.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\UserBase.MemoryDAL.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\DbDAL.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\UserBase.BLContracts.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\UserBase.DALContracts.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\UserBase.Entities.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\UserBase.FileDAL.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\bin\Debug\UserBase.MemoryDAL.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\obj\Debug\UserBase.UserLogic.csprojResolveAssemblyReference.cache
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\obj\Debug\UserBase.UserLogic.dll
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Task06\UserBase.UserLogic\obj\Debug\UserBase.UserLogic.pdb

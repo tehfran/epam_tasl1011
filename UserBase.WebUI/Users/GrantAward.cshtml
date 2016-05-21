@@ -1,0 +1,53 @@
+@using UserBase.WebUI.Models;
+@using UserBase.BLContracts;
+@using UserBase.UserLogic;
+@using UserBase.Entities;
+@{
+    var userLogic = UserLinker.Instance;
+    var awardLogic = AwardLinker.Instance;
+}
+
+@if (IsPost)
+{
+    var stringUserId = Request["userId"];
+    int userId;
+    if (string.IsNullOrWhiteSpace(stringUserId) || !int.TryParse(stringUserId, out userId))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    var stringAwardId = Request["awardId"];
+    int awardId;
+    if (string.IsNullOrWhiteSpace(stringAwardId) || !int.TryParse(stringAwardId, out awardId))
+    {
+        Response.SetStatus(HttpStatusCode.BadRequest);
+        return;
+    }
+
+    awardLogic.Grant(userId, awardId);
+    Response.Redirect("../Index");
+    return;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <form action="~/Users/GrantAward" method="post" role="form">
+        <div class="form-group">
+            <label class="control-label" for="userText">Select award</label>
+            <select name="awardId">
+                @foreach (var award in awardLogic.GetAll())
+                {
+                    <option value="@award.Id">@award.Name</option>
+                }
+            </select>
+            <input type="hidden" name="userId" value="@int.Parse(Request["userId"])" />
+        </div>
+        <button class="btn btn-default grant-award">Grant award</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿@using UserBase.WebUI.Models;
+
+@{
+    var images = ImageLinker.Instance.GetAll();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <form action="~/Image/Upload" method="post" enctype="multipart/form-data" role="form">
+            <div class="form-group">
+                <label for="uploaded" class="control-label">Choose file for upload</label>
+                <input type="file" class="form-control" id="uploaded" name="uploaded" />
+            </div>
+            <button type="submit" class="btn btn-default">Upload image</button>
+        </form>
+        <div class="container-fluid">
+            <h2>Images <small>(click to download)</small></h2>
+            <div>
+                @foreach (var image in images)
+                {
+                    <div>
+                        <header>@image.FileName</header>
+                        <a href="~/Image/Download?id=@image.Id">
+                            <img src="~/Images/View?id=@image.Id" alt="@image.FileName" class="img-responsive img-rounded" />
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
